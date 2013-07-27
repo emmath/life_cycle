@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 
 gem "dynamic_form", "1.1.4"
 
-
+gem 'cocoon'
 
 gem 'sqlite3'
 
