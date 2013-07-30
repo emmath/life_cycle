@@ -11,11 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130730170411) do
-=======
-ActiveRecord::Schema.define(:version => 20130727201448) do
->>>>>>> 2a03d07a601b50fc55503f52f8bb35acc012452a
+ActiveRecord::Schema.define(:version => 20130730213807) do
+
+  create_table "fellow_statuses", :force => true do |t|
+    t.integer  "fellow_id_id"
+    t.integer  "status_id_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "fellow_statuses", ["fellow_id_id"], :name => "index_fellow_statuses_on_fellow_id_id"
+  add_index "fellow_statuses", ["status_id_id"], :name => "index_fellow_statuses_on_status_id_id"
 
   create_table "fellows", :force => true do |t|
     t.string   "name"
@@ -27,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130727201448) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-<<<<<<< HEAD
 
   create_table "statuses", :force => true do |t|
     t.string   "name"
@@ -35,7 +40,5 @@ ActiveRecord::Schema.define(:version => 20130727201448) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
-=======
->>>>>>> 2a03d07a601b50fc55503f52f8bb35acc012452a
 
 end
