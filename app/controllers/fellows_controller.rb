@@ -22,4 +22,19 @@ class FellowsController < ApplicationController
   def show
     @fellow = Fellow.find(params[:id])
   end
+
+  def edit
+    @fellow = Fellow.find(params[:id])
+  end
+
+  def update
+    @fellow = Fellow.find(params[:id])
+    if @fellow.update_attributes(params[:fellow])
+      flash[:notice] = "Fellow has been updated."
+      redirect_to @fellow
+    else
+      flash[:alert] = "Fellow has not been updated."
+      render action: "edit"
+    end
+  end
 end
