@@ -1,5 +1,8 @@
 class FellowsController < ApplicationController
-
+  before_filter :find_fellow, :only => [:show,
+                                       :edit,
+                                       :update,
+                                       :destroy]
   def index
     @fellows = Fellow.all
   end
@@ -42,6 +45,14 @@ class FellowsController < ApplicationController
     @fellow = Fellow.find(params[:id])
     @fellow.destroy
     flash[:notice] = "Fellow has been deleted."
+    redirect_to fellows_path
+  end
+
+private
+  def find_fellow
+    @fellow = Fellow.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The fellow you were looking for could not be found."
     redirect_to fellows_path
   end
 end
