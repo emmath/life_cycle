@@ -1,7 +1,7 @@
 class FellowsController < ApplicationController
 
   def index
-
+    @fellows = Fellow.all
   end
 
   def new
