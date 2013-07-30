@@ -9,11 +9,13 @@ class FellowsController < ApplicationController
   end
 
   def create
-    @fellow = Fellow.new(params[:id])
+    @fellow = Fellow.new(params[:fellow])
     if @fellow.save
       flash[:notice] = "Fellow has been added."
       redirect_to @fellow
     else
+      flash[:alert] = "Fellow has not been added."
+      render action: "new"
     end
   end
 
