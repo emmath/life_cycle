@@ -37,4 +37,11 @@ class FellowsController < ApplicationController
       render action: "edit"
     end
   end
+
+  def destroy
+    @fellow = Fellow.find(params[:id])
+    @fellow.destroy
+    flash[:notice] = "Fellow has been deleted."
+    redirect_to fellows_path
+  end
 end
