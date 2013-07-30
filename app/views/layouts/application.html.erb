@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LifeCycle</title>
+  <title>
+  <% if content_for?(:title) %>
+    <%= yield(:title) %>
+  <% else %>
+    life_cycle
+  <% end %>
+</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag :cocoon %>

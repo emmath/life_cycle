@@ -1,0 +1,8 @@
+<% title(@status.name, "Statuses") %>
+<h2><%= @status.name %></h2>
+
+<%= link_to "Edit Status", edit_status_path(@status) %>
+<%= link_to "Delete Status",
+     status_path(@status),
+     :method => :delete,
+     :confirm => "Are you sure you want to delete this status?" %>
