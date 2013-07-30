@@ -1,0 +1,15 @@
+<h2>Fellow Statuses</h2>
+
+<%= link_to "New Fellow Status", new_fellowstatus_path %>
+
+<h3>Add a new Fellow</h3>
+<%= link_to "New Fellow", new_fellow_path %>
+
+<h3>Add a new Status</h3>
+<%= link_to "New Status", new_status_path %>
+
+<% @fellow_statuses.each do |fellow_status| %>
+<tr>
+    <td><%= fellow_status.fellow.name %></td>
+    <td><%= fellow_status.status.name %></td>
+</tr>

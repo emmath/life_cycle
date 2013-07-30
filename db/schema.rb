@@ -14,14 +14,14 @@
 ActiveRecord::Schema.define(:version => 20130730213807) do
 
   create_table "fellow_statuses", :force => true do |t|
-    t.integer  "fellow_id_id"
-    t.integer  "status_id_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "fellow_id"
+    t.integer  "status_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "fellow_statuses", ["fellow_id_id"], :name => "index_fellow_statuses_on_fellow_id_id"
-  add_index "fellow_statuses", ["status_id_id"], :name => "index_fellow_statuses_on_status_id_id"
+  add_index "fellow_statuses", ["fellow_id"], :name => "index_fellow_statuses_on_fellow_id"
+  add_index "fellow_statuses", ["status_id"], :name => "index_fellow_statuses_on_status_id"
 
   create_table "fellows", :force => true do |t|
     t.string   "name"
