@@ -1,0 +1,20 @@
+<% title(@fellowstatus.fellow.name, "Fellow Statuses") %>
+<h1>Fellow Story</h1>
+<h2>
+  <b>Fellow:</b>
+  <%= @fellowstatus.fellow.name %>
+  <%= link_to "Fellow Info", fellow_path %>
+</h2>
+
+<h2>
+  <b>Status:</b>
+  <%= @fellowstatus.status.name %>
+</h2>
+
+  <h2>Created at: <%= Time.now.to_date %></h2>
+
+
+
+
+<%= link_to "View all Fellow Statuses", fellowstatuses_path %>
+<%= link_to "Edit Fellow Status", edit_fellowstatus_path(@fellowstatus) %>

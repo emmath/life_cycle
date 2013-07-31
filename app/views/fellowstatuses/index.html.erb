@@ -1,0 +1,25 @@
+<h1>IS THIS THE FELLOW STATUS INDEX???</h1>
+
+<h2>Add a new Fellow</h2>
+<%= link_to "New Fellow", :fellows %><br />
+
+<h2>Add a new Status</h2>
+<%= link_to "New Status", :statuses %><br />
+
+<h2>Create a new Fellow Status</h2>
+<%= link_to "New Fellow Status", new_fellowstatus_path %>
+
+<h2>Fellow Statuses You Have Set!</h2>
+<table>
+  <tr>
+    <th>Fellow</th>
+    <th>Status</th>
+    <th>Last Updated At</th>
+  </tr>
+
+<% @fellowstatuses.each do |fellowstatus| %>
+  <tr>
+    <td><%= fellowstatus.fellow.name %></td>
+    <td><%= fellowstatus.status.name %></td>
+  </tr>
+<% end %>

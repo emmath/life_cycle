@@ -1,5 +1,31 @@
 <% title(@fellow.name, "Fellows") %>
 <h2><%= @fellow.name %></h2>
+<h3>Fellow Information:</h3>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Twitter Handle</th>
+    <th>Facebook</th>
+    <th>LinkedIn</th>
+    <th>Notes</th>
+  </tr>
+
+  <tr>
+    <td><%= @fellow.email %></td>
+    <td><%= @fellow.twitter %></td>
+    <td><%= @fellow.facebook %></td>
+    <td><%= @fellow.linkedin %></td>
+    <td><%= @fellow.notes %></td>
+  </tr>
+
+</table>
+  <br />
+  <br />
+
+
+
+
 <%= link_to "Edit Fellow", edit_fellow_path(@fellow) %>
 <%= link_to "Delete Fellow",
      fellow_path(@fellow),
