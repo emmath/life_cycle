@@ -4,7 +4,7 @@ class Fellow < ActiveRecord::Base
 
   validates :name, presence: true
 
-  has_many :fellow_statuses
-  has_many :statuses, through: :fellow_statuses
+  has_many :fellowstatuses
+  has_many :statuses, through: :fellowstatuses
 
 end

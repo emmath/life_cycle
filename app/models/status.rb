@@ -3,7 +3,7 @@ class Status < ActiveRecord::Base
 
   validates :name, presence: true
 
-  has_many :fellow_statuses
-  has_many :fellows, through: :fellow_statuses
+  has_many :fellowstatuses
+  has_many :fellows, through: :fellowstatuses
 
 end

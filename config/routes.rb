@@ -1,7 +1,7 @@
 LifeCycle::Application.routes.draw do
 
-  root to: "fellow_statuses#index"
-    resources :fellow_statuses
+  root to: "fellowstatuses#index"
+    resources :fellowstatuses
     resources :fellows
     resources :statuses
 
