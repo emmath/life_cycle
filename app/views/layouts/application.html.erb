@@ -14,12 +14,11 @@
 </head>
 <body>
   <nav>
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
   Signed in as <%= current_user.email %>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path %>
 <% end %>
-  <%= link_to "Sign in", new_user_session_path %>
 </nav>
   <% flash.each do |key, value| %>
     <div class='flash' id='<%=key %>'>
