@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Editing Fellows" do
   before do
     Factory(:fellow, name: "New Guy")
-    visit '/'
+    visit '/fellows'
     click_link "New Guy"
     click_link "Edit Fellow"
   end

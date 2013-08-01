@@ -24,6 +24,12 @@
   <br />
 
 
+<%= @fellow.name %><br />
+<% @fellow.fellowstatuses.each do |fellow_status| %>
+  <%= fellow_status.created_at.to_date %><br />
+  <%= fellow_status.status.name %><br />
+<% end %>
+
 
 
 <%= link_to "Edit Fellow", edit_fellow_path(@fellow) %>

@@ -3,17 +3,19 @@
 
 
 
+
   <div class="field">
-    <%= f.label :fellow %>
+    <%= f.label :fellow_id %>
     <%= f.collection_select :fellow_id, Fellow.find(:all),
                             :id, :name, prompt: "Choose a Fellow!" %> <br>
   </div>
 
   <div class="field">
-    <%= f.label :status %>
+    <%= f.label :status_id %>
     <%= f.collection_select :status_id, Status.find(:all),
                             :id, :name, prompt: "Set a Status!" %> <br>
   </div>
+
 
 
 <div class="actions">

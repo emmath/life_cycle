@@ -18,6 +18,9 @@ end
 group :test, :development do
   gem 'rspec-rails', "~> 2.11"
   gem 'launchy'
+  gem 'pry-rails'
+  gem 'pry-debugger'
+  gem 'pry-doc'
 end
 
 group :test do

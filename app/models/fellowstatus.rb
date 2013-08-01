@@ -4,12 +4,13 @@ class Fellowstatus < ActiveRecord::Base
   belongs_to :fellow
   belongs_to :status
 
-  #before_save :set_change_time
+  #after_create :close_old
 
-  #def set_change_time
-   # if self.update?
-   # self.time = Time.now
+  #scope :for, lambda do |fellow|
+
+  #def close_old
+    #(Fellowstatus.for(fellow).where(closed_at: nil) - [self]).each |fellowstatus| do
+    #  fellowstatus.update_attribute(:closed_at, Time.current)
    # end
   #end
-
 end

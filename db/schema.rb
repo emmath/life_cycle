@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730233829) do
+ActiveRecord::Schema.define(:version => 20130801201956) do
 
   create_table "fellows", :force => true do |t|
     t.string   "name"
@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(:version => 20130730233829) do
     t.string   "facebook"
     t.string   "linkedin"
     t.text     "notes"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "fellowstatuses_id"
   end
 
   create_table "fellowstatuses", :force => true do |t|
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130730233829) do
     t.integer  "status_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.datetime "closed_at"
   end
 
   add_index "fellowstatuses", ["fellow_id"], :name => "index_fellowstatuses_on_fellow_id"
@@ -37,8 +39,9 @@ ActiveRecord::Schema.define(:version => 20130730233829) do
   create_table "statuses", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "fellowstatuses_id"
   end
 
 end

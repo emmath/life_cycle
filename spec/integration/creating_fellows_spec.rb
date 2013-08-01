@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'Creating Fellows' do
 
   before do
-    visit '/'
+    visit '/fellows'
     click_link 'New Fellow'
   end
 

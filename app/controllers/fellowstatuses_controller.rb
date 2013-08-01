@@ -1,8 +1,9 @@
 class FellowstatusesController < ApplicationController
-  before_filter :find_fellows_and_statuses
+  before_filter :find_fellows_and_statuses, only: [:show, :edit, :update, :destroy]
 
   def index
     @fellowstatuses = Fellowstatus.all
+
   end
 
 def new
@@ -12,11 +13,21 @@ def new
   end
 
   def create
+
+    @fellow = Fellow.find(params[:fellowstatus][:fellow_id])
+    @status = Status.find(params[:fellowstatus][:status_id])
+    # @fellow.statuses << @status
+
+    @fellowstatus = Fellowstatus.new(fellow_id: @fellow.id, status_id: @status.id)
+
     #@fellow = Fellow.new(params[:fellow])
     #@fellowstatus = @fellow.fellowstatus.build
-    @fellowstatus = Fellowstatus.new(params[:fellowstatus])
+    # @fellowstatus = Fellowstatus.build(params[:fellowstatus])
+    #@fellowstatus.closed_old
+
     if @fellowstatus.save
-      flash[:notice] = "Fellow Status has been created."
+      flash[:notice] = "Fellow Status has been added."
+      # redirect_to @fellowstatus
       redirect_to @fellowstatus
     else
      flash[:alert] = "Fellow Status has not been created."
@@ -39,25 +50,15 @@ def new
     @fellowstatus = Fellowstatus.find(params[:id])
     @fellowstatus.update_attributes(params[:fellowstatus])
         #@fellowstatus.time = Time.now
+      #if @fellowstatus.update
 
-        flash[:notice] = "Fellow Status has been updated"
+      flash[:notice] = "Fellow Status has been updated"
         flash[:notice] = Time.now
         redirect_to @fellowstatus
       #else
        #flash[:alert] = "Fellow Status has not been updated."
         #render action: "edit"
       #end
-  end
-
-  def story
-    @story = @fellow.fellowstatus.build(@status)
-    @story.save
-  end
-
-  def set_change_time
-    if self.update?
-    self.time = Time.now
-    end
   end
 
   def destroy
