@@ -1,4 +1,4 @@
-By Colette Taylor and Emma Had
+By Colette Taylor and Emma Hardman
 
 This app is designed for use by Code Fellows org to track the "life-cycle" of parties interested in Code Fellows.
 
