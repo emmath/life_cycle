@@ -16,18 +16,16 @@ def new
 
     @fellow = Fellow.find(params[:fellowstatus][:fellow_id])
     @status = Status.find(params[:fellowstatus][:status_id])
-    # @fellow.statuses << @status
-
     @fellowstatus = Fellowstatus.new(fellow_id: @fellow.id, status_id: @status.id)
 
     #@fellow = Fellow.new(params[:fellow])
     #@fellowstatus = @fellow.fellowstatus.build
-    # @fellowstatus = Fellowstatus.build(params[:fellowstatus])
+    #@fellowstatus = Fellowstatus.build(params[:fellowstatus])
     #@fellowstatus.closed_old
 
     if @fellowstatus.save
       flash[:notice] = "Fellow Status has been added."
-      # redirect_to @fellowstatus
+
       redirect_to @fellowstatus
     else
      flash[:alert] = "Fellow Status has not been created."

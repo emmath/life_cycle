@@ -1,8 +1,12 @@
-<%= link_to "New Status", new_status_path %>
-
-<h2>Statuses</h2>
-<ul>
+<h2>List of Statuses</h2>
+<table class="table table-bordered">
+  <tr>
+    <th>Status</th>
+  </tr>
   <% @statuses.each do |status| %>
-    <li><%= link_to status.name, status %></li>
+    <tr>
+      <td><%= link_to status.name, status %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
+

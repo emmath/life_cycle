@@ -1,26 +1,25 @@
-<h1>IS THIS THE FELLOW STATUS INDEX???</h1>
-
-<h2>Add a new Fellow</h2>
-<%= link_to "New Fellow", :fellows %><br />
-
-<h2>Add a new Status</h2>
-<%= link_to "New Status", :statuses %><br />
-
-<h2>Create a new Fellow Status</h2>
-<%= link_to "New Fellow Status", new_fellowstatus_path %>
-
-<h2>Fellow Statuses You Have Set!</h2>
-<table>
+<h2>Recent Fellow Statuses!</h2>
+<table class="table table-bordered" bgcolor="#FFF" style="opacity:.95">
   <tr>
     <th>Fellow</th>
     <th>Status</th>
     <th>Last Updated At</th>
+    <th>History</th>
   </tr>
 
-<% @fellowstatuses.each do |fellowstatus| %>
-  <tr>
-    <td><%= fellowstatus.fellow.name %></td>
-    <td><%= fellowstatus.status.name %></td>
-    <td></td>
-  </tr>
-<% end %>
+  <% @fellowstatuses.each do |fellowstatus| %>
+    <tr>
+      <td><%= fellowstatus.fellow.name %></td>
+      <td><%= fellowstatus.status.name %></td>
+      <td><%= fellowstatus.updated_at.strftime('%B %d, %Y') %></td>
+      <td><%= link_to "History", :fellows %></td>
+    </tr>
+  <% end %>
+
+</table>
+
+<br />
+<br />
+
+<%= link_to "Look At All Statuses", :statuses %>
+<%= link_to "Look At All Fellows", :fellows %>

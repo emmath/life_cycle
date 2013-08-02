@@ -1,8 +1,17 @@
 <%= form_for(@fellowstatus) do |f| %>
   <%= f.error_messages %>
 
+<% if params[:fellow_id].present? %>
 
+    <%= @fellowstatus.fellow.name %>
 
+    <div class="field">
+    <%= f.label :status %>
+    <%= f.collection_select :status_id, Status.find(:all),
+                            :id, :name, prompt: "Set a Status!" %> <br>
+  </div>
+
+ <% else %>
 
   <div class="field">
     <%= f.label :fellow_id %>
@@ -16,7 +25,7 @@
                             :id, :name, prompt: "Set a Status!" %> <br>
   </div>
 
-
+<% end %>
 
 <div class="actions">
   <%= f.submit %>

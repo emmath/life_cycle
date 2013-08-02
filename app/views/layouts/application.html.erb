@@ -8,20 +8,39 @@
     life_cycle
   <% end %>
 </title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
-  <nav>
-<% if user_signed_in? %>
-  Signed in as <%= current_user.email %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %>
-  <%= link_to "Sign in", new_user_session_path %>
-<% end %>
-</nav>
-  <% flash.each do |key, value| %>
+
+  <div class="navbar navbar-inverse">
+
+    <button type="button" class="btn btn-default navbar-btn pull-left"><%= link_to "Home", root_path %></button>
+    <button type="button" class="btn btn-default navbar-btn pull-left"><%= link_to "Add New Fellow", new_fellow_path %></button>
+    <button type="button" class="btn btn-default navbar-btn pull-left"><%= link_to "New Status", new_status_path %></button>
+    <button type="button" class="btn btn-default navbar-btn pull-left"><%= link_to "New Fellow Status", new_fellowstatus_path %></button>
+
+      <% if user_signed_in? %>
+        <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link"><%= current_user.email %></a></p>
+      <% else %>
+        <button type="button" class="btn btn-default navbar-btn pull-right"><%= link_to "Sign up", new_user_registration_path %></button>
+        <button type="button" class="btn btn-default navbar-btn pull-right"><%= link_to "Sign in", new_user_session_path %></button>
+      <% end %>
+
+      <button type="button" class="btn btn-default navbar-btn pull-right"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></button>
+  </div>
+
+   <% flash.each do |key, value| %>
     <div class='flash' id='<%=key %>'>
       <%=value %>
     </div>

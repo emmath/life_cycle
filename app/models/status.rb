@@ -1,5 +1,5 @@
 class Status < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :description, :name, :fellowstatus_id
 
   validates :name, presence: true
 
