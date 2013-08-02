@@ -25,10 +25,12 @@
 
   <div class="navbar navbar-inverse">
 
+<%= image_tag "CFlogo.png", id: "corner_logo" %>
+<div id="buttons">
     <button type="button" class="btn btn-default navbar-btn pull-left"><%= link_to "Home", root_path %></button>
     <button type="button" class="btn btn-default navbar-btn pull-left"><%= link_to "Add New Fellow", new_fellow_path %></button>
     <button type="button" class="btn btn-default navbar-btn pull-left"><%= link_to "New Status", new_status_path %></button>
-    <button type="button" class="btn btn-default navbar-btn pull-left"><%= link_to "New Fellow Status", new_fellowstatus_path %></button>
+    <button type="button" class="btn btn-default navbar-btn pull-left"><%= link_to "New Fellow Status", new_fellowstatus_path %></button></div>
 
       <% if user_signed_in? %>
         <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link"><%= current_user.email %></a></p>
@@ -38,7 +40,7 @@
       <% end %>
 
       <button type="button" class="btn btn-default navbar-btn pull-right"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></button>
-      <
+
   </div>
 
    <% flash.each do |key, value| %>

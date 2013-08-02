@@ -1,7 +1,7 @@
 
 body {
   background-image:url('3508893790_2d65c0129c_b.jpg');
-  background:0.5;
+
 }
 
 .table {
@@ -9,5 +9,20 @@ body {
   background-color: #FFF
 }
 
+#corner_logo {
+  margin-top: -10px;
+  margin-left: -20px;
+  padding-top: 3px;
+  position: absolute;
+  height: 90px;
+  padding-top: 3px;
+  padding-left: 20px !important;
+}
 
+#buttons{
+  margin-left: 100px;
+}
 
+#form{
+  padding-left: 20px;
+}
