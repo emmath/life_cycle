@@ -1,6 +1,5 @@
 <% title(@fellow.name, "Fellows") %>
-<h2><%= @fellow.name %></h2>
-<h3>Fellow Information:</h3>
+<h1><%= @fellow.name %></h1>
 
 <table>
   <tr>
@@ -24,11 +23,11 @@
   <br />
 
 
-<%= @fellow.name %><br />
-<% @fellow.fellowstatuses.each do |fellow_status| %>
-  <%= fellow_status.created_at.to_date %><br />
-  <%= fellow_status.status.name %><br />
-<% end %>
+    <% @fellow.fellowstatuses.each do |fellow_status| %>
+      <%= fellow_status.created_at.to_date %><br />
+      <%= fellow_status.status.name %><br />
+    <% end %>
+
 
 
 

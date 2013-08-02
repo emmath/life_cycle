@@ -2,17 +2,15 @@
 <h1>Fellow Story</h1>
 <h2>
   <b>Fellow:</b>
-  <%= @fellowstatus.fellow.name %>
-  <%= link_to "Fellow Info", fellow_path %>
+  <%= link_to @fellowstatus.fellow.name %>
 </h2>
 
 <h2>
-  <b>Status:</b>
+  <b>Current Status:</b>
   <%= @fellowstatus.status.name %>
 </h2>
 
   <h2>Created at: <%= Time.now.to_date %></h2>
-
 
 
 
