@@ -1,0 +1,14 @@
+Fri, 02 Aug 2013 07:26:51 -0700
+doc/README_FOR_APP	Fri, 02 Aug 2013 07:24:45 -0700
+app/controllers/application_controller.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/controllers/fellows_controller.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/controllers/fellowstatuses_controller.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/controllers/statuses_controller.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/helpers/application_helper.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/helpers/fellows_helper.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/helpers/fellowstatuses_helper.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/helpers/statuses_helper.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/models/fellow.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/models/fellowstatus.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/models/status.rb	Fri, 02 Aug 2013 07:24:45 -0700
+app/models/user.rb	Fri, 02 Aug 2013 07:24:45 -0700
